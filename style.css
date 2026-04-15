@@ -1216,13 +1216,14 @@ body {
 /* ITEM */
 .faq-item {
   border-bottom: 1px solid #ddd;
+  transition: 0.3s;
 }
 
 .faq-item:last-child {
   border-bottom: none;
 }
 
-/* ACTIVE BG */
+/* ACTIVE */
 .faq-item.active {
   background: #f5eaea;
 }
@@ -1241,38 +1242,16 @@ body {
   font-weight: 500;
 }
 
-/* 🔥 ICON (CLEAN ARROW STYLE) */
+/* ICON */
 .faq-icon {
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid #bbb;
-  border-radius: 50%;
-  position: relative;
-  transition: 0.3s;
+  width: 26px;
+  height: 26px;
 }
 
-/* ARROW */
-.faq-icon::before {
-  content: "";
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-right: 2px solid #666;
-  border-bottom: 2px solid #666;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -60%) rotate(45deg);
-  transition: 0.3s ease;
-}
-
-/* ACTIVE STATE */
-.faq-item.active .faq-icon {
-  border-color: #d2232a;
-}
-
-.faq-item.active .faq-icon::before {
-  border-color: #d2232a;
-  transform: translate(-50%, -40%) rotate(-135deg);
+.faq-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* ANSWER */
@@ -1302,6 +1281,7 @@ body {
     gap: 20px;
   }
 }
+
 /* footer section  */
 
 /* CONTAINER */

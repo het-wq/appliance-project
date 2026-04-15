@@ -501,7 +501,7 @@
 <section class="faq-section">
   <div class="faq-wrapper">
 
-    <!-- TOP -->
+    <!-- HEADER -->
     <div class="faq-header">
       <div>
         <h2>Have <span>Questions?</span></h2>
@@ -516,10 +516,13 @@
     <!-- FAQ BOX -->
     <div class="faq-box">
 
+      <!-- ITEM -->
       <div class="faq-item active">
         <div class="faq-question">
           <div class="faq-left">
-            <span class="faq-icon"></span>
+            <span class="faq-icon">
+              <img src="./images/arrow-up.svg" alt="">
+            </span>
             <span>How much does appliance repair cost?</span>
           </div>
         </div>
@@ -534,7 +537,9 @@
       <div class="faq-item">
         <div class="faq-question">
           <div class="faq-left">
-            <span class="faq-icon"></span>
+            <span class="faq-icon">
+              <img src="./images/arrow-down.png" alt="">
+            </span>
             <span>How quickly can you come to repair my appliance?</span>
           </div>
         </div>
@@ -546,7 +551,9 @@
       <div class="faq-item">
         <div class="faq-question">
           <div class="faq-left">
-            <span class="faq-icon"></span>
+            <span class="faq-icon">
+              <img src="./images/arrow-down.png" alt="">
+            </span>
             <span>Do you repair all types and brands of appliances?</span>
           </div>
         </div>
@@ -558,7 +565,9 @@
       <div class="faq-item">
         <div class="faq-question">
           <div class="faq-left">
-            <span class="faq-icon"></span>
+            <span class="faq-icon">
+              <img src="./images/arrow-down.png" alt="">
+            </span>
             <span>Is it better to repair or replace my appliance?</span>
           </div>
         </div>
@@ -570,7 +579,9 @@
       <div class="faq-item">
         <div class="faq-question">
           <div class="faq-left">
-            <span class="faq-icon"></span>
+            <span class="faq-icon">
+              <img src="./images/arrow-down.png" alt="">
+            </span>
             <span>How long does a repair usually take?</span>
           </div>
         </div>
@@ -640,33 +651,29 @@
 
 <!-- for toggle faq answer   -->
 <script>
+document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".faq-item");
 
-  items.forEach(item => {
-    const question = item.querySelector(".faq-question");
-    const answer = item.querySelector(".faq-answer");
+  items.forEach((item) => {
+    item.querySelector(".faq-question").addEventListener("click", () => {
 
-    // open first by default
-    if (item.classList.contains("active")) {
-      answer.style.height = answer.scrollHeight + "px";
-    }
+      const isActive = item.classList.contains("active");
 
-    question.addEventListener("click", () => {
-      const isOpen = item.classList.contains("active");
-
-      // close all
-      items.forEach(i => {
+      // Close all
+      items.forEach((i) => {
         i.classList.remove("active");
-        i.querySelector(".faq-answer").style.height = 0;
+        i.querySelector("img").src = "./images/arrow-down.png";
       });
 
-      // open clicked
-      if (!isOpen) {
+      // Open clicked
+      if (!isActive) {
         item.classList.add("active");
-        answer.style.height = answer.scrollHeight + "px";
+        item.querySelector("img").src = "./images/arrow-up.svg";
       }
+
     });
   });
+});
 </script>
 
 </body>
