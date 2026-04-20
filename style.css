@@ -1426,3 +1426,18 @@ body {
     text-align: center;
   }
 }
+@media (max-width: 767px) {
+    .header{
+        padding: 12px 0px!important;
+    }
+    .header .container {
+        width: 100%!important;
+    }
+    .header-buttons {
+        flex-wrap: wrap!important;
+        justify-content: end!important;
+    }
+    .logo img{
+        position: unset!important;
+    }
+}
