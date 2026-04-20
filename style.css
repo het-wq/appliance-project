@@ -19,24 +19,37 @@ body {
 }
 
 /* ================= HEADER ================= */
+/* HEADER */
 .header {
   background: #d62828;
-  padding: 15px 0;
+  padding: 20px 0;
   position: relative;
   z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* CONTAINER */
 .header-inner {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  padding: 0 20px;
 }
 
-/* LOGO */
+/* LOGO CENTER (OVERLAP EFFECT) */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  z-index: 5;
+}
+
 .logo img {
   height: 90px;
-  position: absolute;
-  top: 40px; /* overlap effect */
 }
 
 /* BUTTONS */
@@ -46,14 +59,15 @@ body {
 }
 
 .header-btn {
-  padding: 10px 18px;
+  padding: 8px 14px;
   border-radius: 6px;
+  font-size: 13px;
   text-decoration: none;
-  font-size: 14px;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
-/* SOLID */
+/* SOLID BUTTON */
 .header-btn.solid {
   background: #fff;
   color: #d62828;
@@ -65,7 +79,7 @@ body {
   border: 1px solid #fff;
 }
 
-/* OUTLINE */
+/* OUTLINE BUTTON */
 .header-btn.outline {
   border: 1px solid #fff;
   color: #fff;
@@ -74,6 +88,36 @@ body {
 .header-btn.outline:hover {
   background: #fff;
   color: #d62828;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 12px;
+  }
 }
 
 /* ================= HERO ================= */
